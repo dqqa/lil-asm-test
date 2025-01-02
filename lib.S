@@ -66,4 +66,11 @@ do_stuff:
     pop %rbp
     ret
 
+.globl tick
+tick:
+    rdtsc
+    shl $32, %rdx
+    or %rdx, %rax
+    ret
+
 .section .note.GNU-stack # missing .note.GNU-stack section implies executable stack
